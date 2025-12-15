@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  background: #000;
+}
+
+.title {
+  font-family: "Dancing Script", cursive;
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 4rem;
+  text-transform: capitalize; /* Capitalize looks better with this font */
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, #c31b1b, #801569, #f41789);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: gradient 5s linear infinite;
+  text-shadow: 0 0 5px rgba(255, 0, 132, 0.5), 0 0 10px rgba(255, 0, 132, 0.5);
+  z-index: 10;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#moa {
+  position: absolute;
+  font-size: 2rem;
+  color: #ff0084;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  font-family: 'Dancing Script', cursive;
+  z-index: 20; /* Make sure it's on top of everything */
+}
+
+#moa.show {
+  opacity: 1;
+}
+
